@@ -11,7 +11,7 @@ INTERRUPTION_SIGMA = 3.0
 BREAK_MEAN = 60.0
 BREAK_SIGMA = 3.0
 
-def time_per_task():
+def working_duration():
     t = random.normalvariate(TASK_MEAN, TASK_SIGMA)
 
     while t <= 0:
@@ -32,6 +32,15 @@ def time_to_break():
         t = random.normalvariate(BREAK_MEAN, BREAK_SIGMA)
     return t
 
+def break_duration():
+        time = random.normalvariate(BREAK_MEAN, BREAK_SIGMA)
+
+        while time <= 0:
+            time = random.normalvariate(BREAK_MEAN, BREAK_SIGMA)
+        return time
+
+
+
 class Person:
     def __init__(self,env,state):
         self.state = state
@@ -47,31 +56,51 @@ class Person:
 
     def working(self):
         while True:
-            time = time_per_task()
-            while time:
+            working_time = working_duration()
+            while working_time:
                 with self.person.request(priority=2) as request:
-                    #print(f'solicitando trabajar unos ', time, ' minutos')
+                    print(f'solicitando trabajar unos ', working_time, ' minutos')
                     yield request
-                    self.state = 'W'
                     start = self.env.now
                     try:
-                        yield self.env.timeout(time)
+                        self.state = 'W'
                         print('trabajando')
-                        time = 0
+                        yield self.env.timeout(working_time)
+                        working_time = 0
                     except simpy.Interrupt:
-                        time -= self.env.now - start
-                        print(f'trabajo interrumpido en el minuto ',self.env.now,', queda por completar unos ', time, ' minutos')
+                        working_time -= self.env.now - start
+                        print(f'trabajo interrumpido en el minuto ',self.env.now,', queda por completar unos ', working_time, ' minutos')
             self.completed_tasks +=1
             print(f'tarea numero ',self.completed_tasks,' completada')
 
-
+    
     def take_break(self):
         while True:
-            time = time_to_break()
-
+            time_break = break_duration()
             #print('solicitando descanso')
-            yield self.env.timeout(time)
-            
+            with self.person.request(priority=1) as request:
+                while time_break and self.state =='W':
+                    yield request
+                    try:
+                        print(f'interrumpiendo trabajo para descansar en el minuto',self.env.now)
+                        self.process_working.interrupt()
+                        self.state = 'D'
+                        print(f'descansando unos ',time_break, ' minutos')
+                        yield self.env.timeout(time_break)
+                        print(f'descanso completado')
+                    except simpy.Interrupt:
+                        self.state = 'I'
+                        interrupt_start = self.env.now
+                        print('descanso interrumpido')
+                        with self.person.request(priority=1) as request:
+                            yield request
+                            print('retomando descanso')
+                            yield self.env.timeout(max(0,time_break - (self.env.now - interrupt_start)))
+                            time_break = 0
+            self.breaks += 1
+            print(f'descanso numero ',self.breaks, ' completado')
+                        
+        """   
             if self.state == 'W':
                 print(f'interrumpiendo trabajo para descansar en el minuto',self.env.now)
                 self.process_working.interrupt()
@@ -103,7 +132,9 @@ class Person:
                         self.state = 'D'
                 self.breaks += 1
                 print(f'descanso numero ',self.breaks, ' completado')
-
+    """
+            
+    
                       
     def interrupting(self):
         while True:
@@ -116,13 +147,14 @@ class Person:
             if self.state == 'D':
                 print(f'interrumpiendo descanso en el minuto', self.env.now)
                 self.process_break.interrupt()
-            print('interrumpiendo')
-            self.interrupts += 1
-            print(f'interrupcion',self.interrupts,' completada')
-            yield self.env.timeout(time_to_interrupt())
+            if self.state == 'W' or self.state == 'D':
+                print('interrumpiendo')
+                self.interrupts += 1
+                print(f'interrupcion',self.interrupts,' completada')
+                yield self.env.timeout(time_to_interrupt())
 
 random.seed(RANDOM_SEED)
 
 env = simpy.Environment()
-person = Person(env,'W')
+person = Person(env,'S')
 env.run(until=1000)
