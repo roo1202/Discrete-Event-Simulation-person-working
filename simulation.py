@@ -1,17 +1,18 @@
 import random
 import simpy
+import time as tm
 
 RANDOM_SEED = 42
-TASK_MEAN = 20.0
+TASK_MEAN = 10.0
 TASK_SIGMA = 2.0
 
-INTERRUPTION_MEAN = 10.0
+INTERRUPTION_MEAN = 30.0
 INTERRUPTION_SIGMA = 3.0
 
-BREAK_MEAN = 60.0
+BREAK_MEAN = 20.0
 BREAK_SIGMA = 3.0
 
-def working_duration():
+def time_per_task():
     t = random.normalvariate(TASK_MEAN, TASK_SIGMA)
 
     while t <= 0:
@@ -56,105 +57,104 @@ class Person:
 
     def working(self):
         while True:
-            working_time = working_duration()
-            while working_time:
-                with self.person.request(priority=2) as request:
-                    print(f'solicitando trabajar unos ', working_time, ' minutos')
-                    yield request
-                    start = self.env.now
-                    try:
-                        self.state = 'W'
-                        print('trabajando')
-                        yield self.env.timeout(working_time)
-                        working_time = 0
-                    except simpy.Interrupt:
-                        working_time -= self.env.now - start
-                        print(f'trabajo interrumpido en el minuto ',self.env.now,', queda por completar unos ', working_time, ' minutos')
+            time = time_per_task()
+            print('duracion de la proxima tarea', time)
+            
+            while time:    
+                start = self.env.now
+                try:
+                    print('empieza a trabajar en el ', self.env.now, 'queda por trabajar ', time)
+                    self.state = 'W'
+                    yield self.env.timeout(time)
+                    time = 0
+                    self.state = 'S'
+                    print(f'tarea completada en el minuto ',self.env.now)
+                except simpy.Interrupt:
+                    time -= self.env.now - start
+                    time = max(0, time)
+                    print(f'trabajo interrumpido en el minuto ',self.env.now,', queda por completar unos ', time, ' minutos')
+                    
+                    if self.state == 'I':
+                        
+                        time_to_interruptt = 5
+                        print('interrupcion en el', self.env.now, ' duracion:', time_to_interruptt)
+                        yield self.env.timeout(time_to_interruptt)
+                        print('interrupcion completada en el minuto', self.env.now)
+                        self.interrupts += 1
+                        #self.state = 'W'
+                        
+                    elif self.state == 'D': 
+                        time_to_breakk = 7
+                        start_break = self.env.now
+                        while time_to_breakk:
+                            try:
+                                print('descansando en el', self.env.now, ' duracion:', time_to_breakk)
+                                yield self.env.timeout(time_to_breakk)
+                                print('descanso completada en el minuto', self.env.now)
+                                self.breaks += 1
+                                time_to_breakk = 0
+                                #self.state = 'W'
+                            except:
+                                time_to_interruptt = 5
+                                print('interrupcion en el', self.env.now, ' duracion:', time_to_interruptt, 'al descanso')
+                                yield self.env.timeout(time_to_interruptt)
+                                print('interrupcion completada en el minuto', self.env.now)
+                                self.interrupts += 1
+                                #self.state = 'D'
+                            time_to_breakk -= self.env.now - start_break
+                            time_to_breakk = max(0, time_to_breakk)
+                                
+                    
             self.completed_tasks +=1
-            print(f'tarea numero ',self.completed_tasks,' completada')
+
+            print(f'tarea numero ',self.completed_tasks,' completada', self.env.now)
+
+
 
     
     def take_break(self):
         while True:
-            time_break = break_duration()
-            #print('solicitando descanso')
-            with self.person.request(priority=1) as request:
-                while time_break and self.state =='W':
-                    yield request
-                    try:
-                        print(f'interrumpiendo trabajo para descansar en el minuto',self.env.now)
-                        self.process_working.interrupt()
-                        self.state = 'D'
-                        print(f'descansando unos ',time_break, ' minutos')
-                        yield self.env.timeout(time_break)
-                        print(f'descanso completado')
-                    except simpy.Interrupt:
-                        self.state = 'I'
-                        interrupt_start = self.env.now
-                        print('descanso interrumpido')
-                        with self.person.request(priority=1) as request:
-                            yield request
-                            print('retomando descanso')
-                            yield self.env.timeout(max(0,time_break - (self.env.now - interrupt_start)))
-                            time_break = 0
-            self.breaks += 1
-            print(f'descanso numero ',self.breaks, ' completado')
-                        
-        """   
-            if self.state == 'W':
-                print(f'interrumpiendo trabajo para descansar en el minuto',self.env.now)
-                self.process_working.interrupt()
-                time_break = time_to_break()
-                start_break = self.env.now
-
-                while time_break :
-                    start = self.env.now
-                    try:
-                        yield self.env.timeout(time_break)
-                        print(f'descansando unos ',time_break, ' minutos')
-                        time_break = 0
-                    except simpy.Interrupt:
-                        self.state = 'I'
-                        interrupt_time = self.env.now - start
-                        if interrupt_time >= (start_break + time_break - self.env.now):
-                            print('la interrupcion duro mas que lo que restaba de descanso')
-                            time_break = 0
-                        else:
-                            time_break -= interrupt_time
-                            print(f'queda por descansar unos ',time_break, ' minutos')
-
-
-                        with self.person.request(priority=1) as request:
-                            print('solicitando retomar el descanso')
-                            yield request
-                            print('retomando descanso')
-                            yield self.env.timeout(5)
-                        self.state = 'D'
-                self.breaks += 1
-                print(f'descanso numero ',self.breaks, ' completado')
-    """
-            
-    
-                      
-    def interrupting(self):
-        while True:
-            #print('solicitando proxima interrupcion')
-            time = time_to_interrupt()
+            time = time_to_break()
+            print('solicitando el proximo descanso en ',self.env.now, ' para dentro de ', time)
             yield self.env.timeout(time)
-            if self.state == 'W':
-                print(f'interrumpiendo trabajo en el minuto ', self.env.now)
-                self.process_working.interrupt()
-            if self.state == 'D':
-                print(f'interrumpiendo descanso en el minuto', self.env.now)
-                self.process_break.interrupt()
-            if self.state == 'W' or self.state == 'D':
-                print('interrumpiendo')
-                self.interrupts += 1
-                print(f'interrupcion',self.interrupts,' completada')
-                yield self.env.timeout(time_to_interrupt())
+           
+            with self.person.request(priority=1) as request:
+                yield request
+                    
+                if self.state == 'W':
+                    self.state = 'D'
+                    self.process_working.interrupt()
+                elif self.state == 'I':
+                    print('no puedes descansar por interrupcion', self.env.now)
+                
+
+    def interrupting(self):
+            while True:
+                time = time_to_interrupt()
+                print('solicitando proxima interrupcion en ', self.env.now, ' para dentro de :', time)
+                yield self.env.timeout(time)
+                
+                with self.person.request(priority=0) as request:
+                    yield request
+                    print('se obtuvo la interrupcion (el recurso) en el minuto', self.env.now)
+                    if self.state == 'W':
+                        self.state = 'I'
+                        self.process_working.interrupt()
+                    elif self.state == 'D':
+                        self.state = 'I'
+                        self.process_working.interrupt()
+                    else:
+                        print(f'no se puede interrumpir en el minuto', self.env.now)
+                        continue
+                    
+                    
+            
 
 random.seed(RANDOM_SEED)
 
 env = simpy.Environment()
 person = Person(env,'S')
-env.run(until=1000)
+env.run(until=200)
+print(person.breaks)
+print(person.completed_tasks)
+print(person.interrupts)
