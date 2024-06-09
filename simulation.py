@@ -2,9 +2,7 @@ import numpy as np
 import scipy.stats as st
 import simpy
 import copy
-
-random.seed(RANDOM_SEED)
-np.random.seed(RANDOM_SEED)
+import pandas as pd
 
 # Parametros de la simulacion
 RANDOM_SEED = 42
@@ -12,6 +10,8 @@ TASK_MEAN = 24.0
 INTERRUPTION_MEAN = 10.0
 INTERRUPTION_DUR = 3.0
 BREAK_MEAN = 6.0
+
+np.random.seed(RANDOM_SEED)
 
 
 def time_per_task():
@@ -67,6 +67,17 @@ class Person:
         env.process(self.interrupting())
         self.process_break = env.process(self.take_break())
 
+        #canatidad para el calculo de probabilidades para el modelo de cadenas de markov,
+        self.work_to_work = 0
+        self.work_to_break = 0
+        self.work_to_interrupt = 0
+
+        self.break_to_work = 0
+        self.break_to_interrupt = 0
+
+        self.interrupt_to_work = 0
+        self.interrupt_to_break = 0
+
     def printv(self, s):
         if self.verbose:
             print(s)
@@ -88,6 +99,7 @@ class Person:
                     self.c = max(self.min_c , self.c-time/100)
                     time = 0
                     self.state = 'S'
+                    self.work_to_work += 1
 
                 except simpy.Interrupt:
                     time = max(0, time - (self.env.now - start)/max(self.c, self.min_c))
@@ -102,6 +114,8 @@ class Person:
                         self.interruption_duration_sum += interruption_time
                         self.interrupts += 1
                         self.state = 'W'
+                        self.work_to_interrupt += 1
+                        self.interrupt_to_work += 1
                         
                     elif self.state == 'D': 
                         break_time = break_duration(self.b_duration)
@@ -116,6 +130,8 @@ class Person:
                                 self.c = min(2 , self.c + break_time/30)
                                 
                                 break_time = 0
+                                self.work_to_break += 1
+                                self.break_to_work += 1
                                 #self.state = 'W'
 
                             except:
@@ -130,6 +146,8 @@ class Person:
                                 self.interrupts += 1
                                 # yield self.env.timeout(break_time)
                                 self.state = 'D'
+                                self.break_to_interrupt+=1
+                                self.interrupt_to_break+=1
 
                         self.breaks += 1
                         # self.break_duration_sum += break_t
