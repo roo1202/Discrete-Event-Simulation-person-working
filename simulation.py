@@ -1,6 +1,7 @@
 import numpy as np
 import scipy.stats as st
 import simpy
+import copy
 
 random.seed(RANDOM_SEED)
 np.random.seed(RANDOM_SEED)
@@ -178,3 +179,49 @@ class Person:
                 else:
                     self.printv(f'no se puede interrumpir en el minuto {self.env.now}')
             
+
+def simulate(n, time, b_time=0, b_duration=0, interruptions=True, verbose=False, likelihood=False, MSE=[5,5,10,10,30,30,30,30]):
+    df = pd.DataFrame({})
+
+    i=0
+    invalid = likelihood
+    while invalid or i < n:
+        env = simpy.Environment()
+        person = Person(env,'S', b_time, b_duration,interr= interruptions)
+        env.run(until=time)
+        env.event().succeed()
+        env.event().succeed()
+        env.event().succeed()
+        # Data Collecting
+        row = pd.DataFrame(
+            {  
+                "break_duration": [b_duration], 
+                "break_timestamp": [b_time],
+                "interruptions": [copy.copy(person.interrupts)],
+                "completed_tasks": [copy.copy(person.completed_tasks)],
+                "breaks": [copy.copy(person.breaks)],
+                "working_time": [copy.copy(person.task_duration_sum)],
+                "break_time": [copy.copy(person.break_duration_sum)],
+                "interruption_time": [copy.copy(person.interruption_duration_sum)],
+            }
+        )
+        df = pd.concat([df,row])
+
+        # To verify stopping criteria
+        if likelihood:
+            est_std = df.std()
+            # print(len(est_std[est_std/np.sqrt(i+1) < MSE]))
+            invalid = len(est_std[est_std/np.sqrt(i+1) < MSE]) < 8
+        
+
+        # If the simulation verbosity is true the print the outcomes
+        if verbose:
+            print("Descanso: ",person.breaks)
+            print("Tareas Completadas: ",person.completed_tasks)
+            print("Duración Media de tareas: ",person.task_duration_sum/person.completed_tasks)
+            print("Interrupciónes: ",person.interrupts)
+
+        i+=1
+        
+        
+    return df
