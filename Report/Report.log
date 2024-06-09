@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.10)  9 JUN 2024 13:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.10)  9 JUN 2024 19:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -399,7 +399,50 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count302
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count303
-) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+) (c:/texlive/2024/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+ (c:/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (c:/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex (c:/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks35
+\XKV@tempa@toks=\toks36
+)
+\XKV@depth=\count304
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (c:/texlive/2024/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (c:/texlive/2024/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+ (c:/texlive/2024/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box64
+)
+\tc@llx=\dimen262
+\tc@lly=\dimen263
+\tc@urx=\dimen264
+\tc@ury=\dimen265
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (c:/texlive/2024/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen266
+\adjbox@Height=\dimen267
+\adjbox@Depth=\dimen268
+\adjbox@Totalheight=\dimen269
+\adjbox@pwidth=\dimen270
+\adjbox@pheight=\dimen271
+\adjbox@pdepth=\dimen272
+\adjbox@ptotalheight=\dimen273
+ (c:/texlive/2024/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count305
+) (c:/texlive/2024/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box65
+\sift@deathcycles=\count306
+\@vwid@loff=\dimen274
+\@vwid@roff=\dimen275
+)) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -421,56 +464,57 @@ File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box64
-\pgfnodeparttwobox=\box65
-\pgfnodepartthreebox=\box66
-\pgfnodepartfourbox=\box67
-\pgfnodeparttwentybox=\box68
-\pgfnodepartnineteenbox=\box69
-\pgfnodeparteighteenbox=\box70
-\pgfnodepartseventeenbox=\box71
-\pgfnodepartsixteenbox=\box72
-\pgfnodepartfifteenbox=\box73
-\pgfnodepartfourteenbox=\box74
-\pgfnodepartthirteenbox=\box75
-\pgfnodeparttwelvebox=\box76
-\pgfnodepartelevenbox=\box77
-\pgfnodeparttenbox=\box78
-\pgfnodepartninebox=\box79
-\pgfnodeparteightbox=\box80
-\pgfnodepartsevenbox=\box81
-\pgfnodepartsixbox=\box82
-\pgfnodepartfivebox=\box83
+\pgfnodepartlowerbox=\box66
+\pgfnodeparttwobox=\box67
+\pgfnodepartthreebox=\box68
+\pgfnodepartfourbox=\box69
+\pgfnodeparttwentybox=\box70
+\pgfnodepartnineteenbox=\box71
+\pgfnodeparteighteenbox=\box72
+\pgfnodepartseventeenbox=\box73
+\pgfnodepartsixteenbox=\box74
+\pgfnodepartfifteenbox=\box75
+\pgfnodepartfourteenbox=\box76
+\pgfnodepartthirteenbox=\box77
+\pgfnodeparttwelvebox=\box78
+\pgfnodepartelevenbox=\box79
+\pgfnodeparttenbox=\box80
+\pgfnodepartninebox=\box81
+\pgfnodeparteightbox=\box82
+\pgfnodepartsevenbox=\box83
+\pgfnodepartsixbox=\box84
+\pgfnodepartfivebox=\box85
 ))) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
 File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
 File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+)))
+(c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count304
-\Gm@cntv=\count305
-\c@Gm@tempcnt=\count306
-\Gm@bindingoffset=\dimen262
-\Gm@wd@mp=\dimen263
-\Gm@odd@mp=\dimen264
-\Gm@even@mp=\dimen265
-\Gm@layoutwidth=\dimen266
-\Gm@layoutheight=\dimen267
-\Gm@layouthoffset=\dimen268
-\Gm@layoutvoffset=\dimen269
-\Gm@dimlist=\toks35
+\Gm@cnth=\count307
+\Gm@cntv=\count308
+\c@Gm@tempcnt=\count309
+\Gm@bindingoffset=\dimen276
+\Gm@wd@mp=\dimen277
+\Gm@odd@mp=\dimen278
+\Gm@even@mp=\dimen279
+\Gm@layoutwidth=\dimen280
+\Gm@layoutheight=\dimen281
+\Gm@layouthoffset=\dimen282
+\Gm@layoutvoffset=\dimen283
+\Gm@dimlist=\toks37
 ) (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-04-11 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count307
-\l__pdf_internal_box=\box84
+\l__color_backend_stack_int=\count310
+\l__pdf_internal_box=\box86
 ) (./Report.aux
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
 
 
 LaTeX Warning: Label `ref1' multiply defined.
@@ -481,44 +525,44 @@ LaTeX Warning: Label `ref1' multiply defined.
 )
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Info: Redefining \. on input line 37.
-LaTeX Info: Redefining \% on input line 37.
-Package hyperref Info: Link coloring OFF on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Info: Redefining \. on input line 41.
+LaTeX Info: Redefining \% on input line 41.
+Package hyperref Info: Link coloring OFF on input line 41.
  (./Report.out) (./Report.out)
 \@outlinefile=\write4
 \openout4 = `Report.out'.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count308
-\scratchdimen=\dimen270
-\scratchbox=\box85
-\nofMPsegments=\count309
-\nofMParguments=\count310
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count311
-\MPscratchDim=\dimen271
-\MPnumerator=\count312
-\makeMPintoPDFobject=\count313
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count311
+\scratchdimen=\dimen284
+\scratchbox=\box87
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen285
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks39
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -563,31 +607,36 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 40.
+(Font)              <12> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 40.
+(Font)              <8> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 40.
+(Font)              <6> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 40.
+(Font)              <7> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 41.
+(Font)              <5> on input line 45.
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 47--49
+Underfull \hbox (badness 3219) in paragraph at lines 51--53
+\T1/cmr/m/n/10 tra-ba-ja-dor. Con la si-mu-la-ción, pre-ten-de-mos iden-ti-fi-car
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 51--53
 \T1/cmr/m/n/10 ex-plo-rar es-tra-te-gias que per-mi-tan mi-ni-mi-zar los efec-tos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
+Underfull \hbox (badness 10000) in paragraph at lines 51--53
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 53.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 57.
 (c:/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 ) [1
@@ -596,111 +645,102 @@ pdfTeX warning: pdflatex.exe (file pdftex.map): cannot open font map file
 
 
 ]
-<Tareas_tiempotareas.png, id=116, 99.37125pt x 93.85063pt>
-File: Tareas_tiempotareas.png Graphic file (type png)
-<use Tareas_tiempotareas.png>
-Package pdftex.def Info: Tareas_tiempotareas.png  used on input line 135.
-(pdftex.def)             Requested size: 199.19234pt x 142.2735pt.
- [2]
-<tareas_interrupciones.png, id=148, 734.9859pt x 372.9132pt>
-File: tareas_interrupciones.png Graphic file (type png)
-<use tareas_interrupciones.png>
-Package pdftex.def Info: tareas_interrupciones.png  used on input line 142.
-(pdftex.def)             Requested size: 199.1666pt x 142.26042pt.
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[]\T1/cmr/m/n/10 Realización de la si-mu-la-ción: Se ge-ne-ra un
+ []
 
-Underfull \hbox (badness 1092) in paragraph at lines 152--153
+
+Underfull \hbox (badness 2591) in paragraph at lines 97--98
+\OML/cmm/m/it/10 Environment$\T1/cmr/m/n/10 (ambiente) de \T1/cmtt/m/n/10 SimPy\T1/cmr/m/n/10 , lue-go se eje-cu-
+ []
+
+<tareas_completada_y_tiempo_de_trabajo.png, id=115, 719.8092pt x 359.9046pt>
+File: tareas_completada_y_tiempo_de_trabajo.png Graphic file (type png)
+<use tareas_completada_y_tiempo_de_trabajo.png>
+Package pdftex.def Info: tareas_completada_y_tiempo_de_trabajo.png  used on input line 138.
+(pdftex.def)             Requested size: 264.61182pt x 142.26784pt.
+[2]
+Underfull \hbox (badness 1092) in paragraph at lines 157--158
 \T1/cmr/m/n/10 vo-car una dis-mi-nu-ción en el de-sem-pe-ño de una per-so-
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 152--153
+Underfull \hbox (badness 1072) in paragraph at lines 157--158
 \T1/cmr/m/n/10 ta los efec-tos psi-co-ló-gi-cos de di-chas per-tur-ba-cio-nes, es-
  []
 
 
-Underfull \hbox (badness 4739) in paragraph at lines 152--153
+Underfull \hbox (badness 4739) in paragraph at lines 157--158
 \T1/cmr/m/n/10 nos \T1/cmtt/m/n/10 ¾Cómo afectan las interrupciones a la cantidad
  []
 
-<tareas_completadas_y_descansos.png, id=151, 744.381pt x 372.9132pt>
+[3 <./tareas_completada_y_tiempo_de_trabajo.png>]
+<tareas_completadas_y_descansos.png, id=161, 744.381pt x 372.9132pt>
 File: tareas_completadas_y_descansos.png Graphic file (type png)
 <use tareas_completadas_y_descansos.png>
-Package pdftex.def Info: tareas_completadas_y_descansos.png  used on input line 173.
-(pdftex.def)             Requested size: 126.00925pt x 119.38586pt.
-<Tiempo_de_trabajo_y_descansos.png, id=152, 744.381pt x 372.9132pt>
+Package pdftex.def Info: tareas_completadas_y_descansos.png  used on input line 198.
+(pdftex.def)             Requested size: 257.3342pt x 212.24406pt.
+<Tiempo_de_trabajo_y_descansos.png, id=162, 744.381pt x 372.9132pt>
 File: Tiempo_de_trabajo_y_descansos.png Graphic file (type png)
 <use Tiempo_de_trabajo_y_descansos.png>
-Package pdftex.def Info: Tiempo_de_trabajo_y_descansos.png  used on input line 178.
-(pdftex.def)             Requested size: 126.00925pt x 119.38586pt.
+Package pdftex.def Info: Tiempo_de_trabajo_y_descansos.png  used on input line 203.
+(pdftex.def)             Requested size: 257.3342pt x 212.24406pt.
+ [4 <./tareas_completadas_y_descansos.png> <./Tiempo_de_trabajo_y_descansos.png>]
+<markov1.png, id=176, 427.1157pt x 328.8285pt>
+File: markov1.png Graphic file (type png)
+<use markov1.png>
+Package pdftex.def Info: markov1.png  used on input line 236.
+(pdftex.def)             Requested size: 142.26509pt x 142.26654pt.
+<markov2.png, id=177, 427.1157pt x 328.8285pt>
+File: markov2.png Graphic file (type png)
+<use markov2.png>
+Package pdftex.def Info: markov2.png  used on input line 243.
+(pdftex.def)             Requested size: 142.26509pt x 142.26654pt.
+<markov3.png, id=178, 427.1157pt x 328.8285pt>
+File: markov3.png Graphic file (type png)
+<use markov3.png>
+Package pdftex.def Info: markov3.png  used on input line 250.
+(pdftex.def)             Requested size: 142.26509pt x 142.26654pt.
 
-Overfull \hbox (2.22166pt too wide) in paragraph at lines 172--182
-[][] [] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--182
-
- []
-
-[3 <./Tareas_tiempotareas.png> <./tareas_interrupciones.png>]
-<comparacion1.jpg, id=172, 545.03625pt x 414.54875pt>
-File: comparacion1.jpg Graphic file (type jpg)
-<use comparacion1.jpg>
-Package pdftex.def Info: comparacion1.jpg  used on input line 208.
-(pdftex.def)             Requested size: 142.26329pt x 142.2604pt.
-
-Underfull \vbox (badness 3954) has occurred while \output is active []
-
-<comparacion2.jpg, id=173, 545.03625pt x 414.54875pt>
-File: comparacion2.jpg Graphic file (type jpg)
-<use comparacion2.jpg>
-Package pdftex.def Info: comparacion2.jpg  used on input line 215.
-(pdftex.def)             Requested size: 142.26329pt x 142.2604pt.
-<comparacion3.jpg, id=174, 545.03625pt x 414.54875pt>
-File: comparacion3.jpg Graphic file (type jpg)
-<use comparacion3.jpg>
-Package pdftex.def Info: comparacion3.jpg  used on input line 222.
-(pdftex.def)             Requested size: 142.26329pt x 142.2604pt.
-
-Underfull \vbox (badness 2359) has occurred while \output is active []
-
- [4 <./tareas_completadas_y_descansos.png> <./Tiempo_de_trabajo_y_descansos.png> <./comparacion1.jpg> <./comparacion2.jpg> <./comparacion3.jpg>]
-Underfull \hbox (badness 1365) in paragraph at lines 236--239
+Underfull \hbox (badness 1365) in paragraph at lines 264--267
 []\T1/cmr/m/n/10 Léon G. Fa-ber, Na-tasha M. Mau-rits, Mo-nic-que M.
  []
 
 
-Underfull \hbox (badness 3189) in paragraph at lines 236--239
+Underfull \hbox (badness 3189) in paragraph at lines 264--267
 \T1/cmr/m/n/10 Lo-rist. \T1/cmr/m/it/10 Men-tal Fa-ti-gue Af-fects Vi-sual Se-lec-ti-ve At-
  []
 
 
-Underfull \hbox (badness 7133) in paragraph at lines 236--239
+Underfull \hbox (badness 7133) in paragraph at lines 264--267
 \T1/cmr/m/it/10 ten-tion\T1/cmr/m/n/10 . Ar-ti-cle in PLOS ONE \TS1/cmr/m/n/10 · \T1/cmr/m/n/10 Oc-to-ber 2012
  []
 
 
-Underfull \hbox (badness 3302) in paragraph at lines 240--244
+Underfull \hbox (badness 3302) in paragraph at lines 268--272
 []\T1/cmr/m/n/10 Blaz Kos. \T1/cmr/m/it/10 In-te-rrup-tions at work Why are they a
  []
 
 
-Underfull \hbox (badness 2197) in paragraph at lines 240--244
+Underfull \hbox (badness 2197) in paragraph at lines 268--272
 \T1/cmr/m/it/10 pro-blem and the best ways to hand-le them\T1/cmr/m/n/10 . Spi-ca.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--249
+Underfull \hbox (badness 10000) in paragraph at lines 273--277
 []\T1/cmr/m/n/10 Hannah Ross. \T1/cmr/m/it/10 The Im-pact of In-te-rrup-tions on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--249
+Underfull \hbox (badness 10000) in paragraph at lines 273--277
 \T1/cmr/m/it/10 Pro-duc-ti-vity & How to Com-bat Them\T1/cmr/m/n/10 . Fe-llow.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--249
+Underfull \hbox (badness 10000) in paragraph at lines 273--277
 []\T1/cmr/m/n/10 https://fellow.app/blog/productivity/the-impact-of-
  []
 
@@ -708,17 +748,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--249
 pdfTeX warning (ext4): destination with the same identifier (name{cite.ref1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.252 \end{document}
+l.280 \end{document}
                      $
 pdfTeX warning (ext4): destination with the same identifier (name{cite.ref1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.252 \end{document}
-                     $
-
-] (./Report.aux
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
+l.280 \end{document}
+                     $ <./markov1.png> <./markov2.png> <./markov3.png>] (./Report.aux
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -729,21 +767,21 @@ L3 programming layer <2024-04-11>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 104CED96C0431AD1708E31A2E8B7BD32;3204.
+(rerunfilecheck)             Checksum: E4590B4E85998550219502262F6840FE;3298.
  ) 
 Here is how much of TeX's memory you used:
- 24562 strings out of 474050
- 478432 string characters out of 5746298
- 1952754 words of memory out of 5000000
- 46545 multiletter control sequences out of 15000+600000
- 569824 words of font info for 58 fonts, out of 8000000 for 9000
+ 25637 strings out of 474050
+ 497118 string characters out of 5746298
+ 1950754 words of memory out of 5000000
+ 47587 multiletter control sequences out of 15000+600000
+ 568293 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,93p,1819b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/public/cm/cmr5.600pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmex10.pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/public/cm/cmmi5.600pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr7.pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy7.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi7.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy10.pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi10.pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
-Output written on Report.pdf (5 pages, 452634 bytes).
+ 84i,8n,93p,1033b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/public/cm/cmmi5.600pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmex10.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy7.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi7.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr7.pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy10.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi10.pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
+Output written on Report.pdf (5 pages, 506801 bytes).
 PDF statistics:
- 708 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 280 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 701 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 275 words of extra memory for PDF output out of 10000 (max. 10000000)
 
