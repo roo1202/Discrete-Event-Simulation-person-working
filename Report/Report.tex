@@ -5,7 +5,8 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{float} 
-\usepackage{tikz} 
+\usepackage{tikz}
+\usepackage{subcaption} 
 \usetikzlibrary{shapes, shadows}
 
 % Configuración de los márgenes (opcional) 
@@ -111,24 +112,85 @@ Finalmente, basándonos en los hallazgos de nuestro análisis estadístico, deri
 
 \section{Resultados y Experimentos} 
 
+\subsection{Principales cuestiones a tratar}
+\begin{enumerate}
+    \item Comparar que estrategia de administración de tiempo es mas productiva?:
+    \begin{enumerate}
+        \item $24-6$
+        \item $12-3$
+        \item Free(aleatorio)
+    \end{enumerate}
+    
+    \item Cual es la media de la cantidad de tareas resultas siguiendo cada estrategia?
+    \item ¿Cuál es la distribución de la cantidad de tareas completadas en la ventana de tiempo de 480 minutos?
+    \item ¿Cómo afecta la duración de los descansos a la cantidad de tareas completadas?
+    \item ¿Cómo afectan las interrupciones a la cantidad de tareas completadas?
+    \item ¿Cómo se correlacionan el número de descansos y el número de tareas completadas? 
+\end{enumerate}
+
+\subsection{Primer acercamiento}
+
 \begin{figure}[H] % ht indica que la figura puede ir "aquí" o en la "parte superior" 
     \centering % Centra la imagen en la página 
-    \includegraphics[width=5cm, height=5cm]{Tareas_tiempotareas.png} % Inserta la imagen 
+    \includegraphics[width=7cm, height=5cm]{Tareas_tiempotareas.png} % Inserta la imagen 
     \caption{Cantidad de Tareas contra Tiempo trabajando } % Agrega un título a la imagen 
     \label{fig:mi_imagen4} % Etiqueta para referenciar la imagen en el texto 
 \end{figure}
 
 \begin{figure}[H] % ht indica que la figura puede ir "aquí" o en la "parte superior" 
     \centering % Centra la imagen en la página 
-    \includegraphics[width=5cm, height=5cm]{tareas_interrupciones.png} % Inserta la imagen 
+    \includegraphics[width=7cm, height=5cm]{tareas_interrupciones.png} % Inserta la imagen 
     \caption{Tareas completadas y Tiempo de trabajo, con o sin interrupciones} % Agrega un título a la imagen 
     \label{fig:mi_imagen5} % Etiqueta para referenciar la imagen en el texto 
 \end{figure}
 
 
-Como principal resultado obtenido tenemos que no es importante la metodología seguida con respecto a los descansos, se puede ser libre con el horario, el tiempo de trabajo distribuye exponencial y la cantidad de tareas distribuye poisson. Salen a resaltar otros resultados que eran evidentes tales como: el tiempo de trabajo y la cantidad de tareas son proporcionales ~\ref{fig:mi_imagen4} y la cantidad de tareas realizadas se ve afectadas si se simula alguien propenso a interrupciones . Se llevaron a cabo simulaciones de $480$ minutos ($8$ horas) con distintas metodologías, descansos cada $24$, $12$, o una cantidad aleatoria de minutos siguiendo una distribuci\'on exponcial con par\'ametro $\lambda = 24$, la duración de los descanso respectivamente queda : $6$, $3$, o una ~\ref{fig:mi_imagen5}cantidad aleatoria de minutos dada por una distribuci\'on exponencial con par\'ametro $\lambda = 6$; todas estas variaciones se simularon con o sin interrupciones. A partir de las simulaciones con el modelo de colas, se recopilan los datos para conformar el modelo de cadenas de Markov, con el cual se llevan a cabo comparaciones en forma de funci\'on diferencia entre ambos modelos. Se llevan a cabo test para validar las hip\'otesis, entre estos se encuentran: "KS statistic", "Chi-square statistic", "U statistic", "D statistic", "H statistic"; son utilizados para confirmar algunas de nuestras hip\'otesis con alto grado de confianza. Para el criterio de parada se usa que tanto se aleja el estimador muestral del la poblaci\'on, y esto se comprueba cuando $\frac{\sigma}{\sqrt{k}} < c$ donde $c$ es el error que se est\'a dispuesto a cometer(la mitad de la longitud de confianza) con $95\%$ de confianza. 
+Como principal resultado obtenido tenemos que no es importante la metodología seguida con respecto a los descansos, se puede ser libre con el horario, el tiempo de trabajo distribuye exponencial y la cantidad de tareas distribuye poisson. Salen a resaltar otros resultados que eran evidentes tales como: el tiempo de trabajo y la cantidad de tareas son proporcionales [~\ref{fig:mi_imagen4}] y la cantidad de tareas realizadas se ve afectadas si se simula alguien propenso a interrupciones [~\ref{fig:mi_imagen5}] 23. Se llevaron a cabo simulaciones de $480$ minutos ($8$ horas) con distintas metodologías, descansos cada $24$, $12$, o una cantidad aleatoria de minutos siguiendo una distribuci\'on exponcial con par\'ametro $\lambda = 24$, la duración de los descanso respectivamente queda : $6$, $3$, o una  cantidad aleatoria de minutos dada por una distribuci\'on exponencial con par\'ametro $\lambda = 6$; todas estas variaciones se simularon con o sin interrupciones. A partir de las simulaciones con el modelo de colas, se recopilan los datos para conformar el modelo de cadenas de Markov, con el cual se llevan a cabo comparaciones en forma de funci\'on diferencia entre ambos modelos. Se llevan a cabo test para validar las hip\'otesis, entre estos se encuentran: "KS statistic", "Chi-square statistic", "U statistic", "D statistic", "H statistic"; son utilizados para confirmar algunas de nuestras hip\'otesis con alto grado de confianza. Para el criterio de parada se usa que tanto se aleja el estimador muestral del la poblaci\'on, y esto se comprueba cuando $\frac{\sigma}{\sqrt{k}} < c$ donde $c$ es el error que se est\'a dispuesto a cometer(la mitad de la longitud de confianza) con $95\%$ de confianza. 
 
-\subsection{Modelo Matem\'atico}
+\subsection{El efecto de las interrupciones}
+
+Es intuitivo pensar que las interrupciones pueden provocar una disminuci\'on en el desempeño de una persona. Aunque en nuestra simulación no se tengan en cuenta los efectos psicológicos de dichas perturbaciones, estas toman tiempo útil, por tanto podríamos preguntarnos \texttt{¿Cómo afectan las interrupciones a la cantidad de tareas completadas?}
+
+Para responder esta interrogante hemos realizado las siguientes pruebas:
+\begin{enumerate}
+    \item Prueba Kolmogorov-Smirnov: test no paramétrico de Bondad de Ajuste para verificar si las muestras provienen de poblaciones significativamente diferentes con respecto al tiempo trabajado.
+    \item Prueba Chi-Square se comprueba que la cantidad de tareas realizadas en ambas muestras es significativamente diferente.
+    \item Prueba de Mann-Whitney U (Wilcoxon Rank): prueba no paramétrica sobre las medianas de ambas muestras con hipótesis alternativa "menor que" ('less') para verificar cual de las dos es la menor. Este test es usado (y no T-test por ejemplo) dando que no podemos asumir que la variable en cuestión está normalmente distribuida, ni que las condiciones que garantizan el $TCL$ se cumplen.
+\end{enumerate}
+
+\subsection{Mejor estrategia de administración}
+
+Se propone verificar si alguna, y cual de las estrategias "Pomodoro" tiene un resultado plausible en la cantidad de tareas resueltas de nuestra simulación. 
+
+Para esta cuestión se realiz\'o:
+\begin{enumerate}
+    \item Visualización de datos con puntos para ubicar como se comporta la relación entre el trabajo y el descanso entre los diferentes grupos que siguen una metodología especifica de planificación. 
+    \item Prueba de Kruskal-Wallis no paramétrica para determinar si hay diferencias estadísticamente significativas entre medianas de los grupos de interés (es equivalente al ANOVA), dado que no podemos garantizar la normalidad de nuestros datos.
+\end{enumerate}
+
+\begin{figure}[ht!]
+    \begin{subfigure}{.50\linewidth}
+        \includegraphics[height=.90\linewidth, width=.95\linewidth]{tareas_completadas_y_descansos.png}
+        \caption{}
+        \label{fig3a}
+    \end{subfigure}
+    \begin{subfigure}{.50\linewidth}
+        \includegraphics[height=.90\linewidth, width=.95\linewidth]{Tiempo_de_trabajo_y_descansos.png}
+        \caption{}
+        \label{fig3b}
+    \end{subfigure}\\
+    
+    \caption{Se muestran 3 subfiguras conformando una \'unica figura.}
+    \label{fig3}
+\end{figure}
+
+En ~\ref{fig3a} se puede observar que ningún grupo sobresale más que otro en la cantidad de tareas completadas, puede notarse porque ningún color (grupos de interes) se posiciona significativamente m\'as a la derecha que otro, en su lugar se posicionan aleatoriamente en el plano. Esto nos sugiere que puede no existir diferencia o mejora entre aplicar una estrategia de planificaci\'on a otra, ni siquiera analizando los grupos seg\'un las interrupciones (puntos y cruces).
+
+Siguiendo un analísis similar, se observa ligeramente mejor desempeño en el tiempo de trabajo en estrategias con descansos más prolongados y más espaciados en ~\ref{fig3b}(gráfica inferior derecha), pero no se asegura que sea significativo.
+
+
+
+\section{Modelo Matem\'atico}
 
 El modelo esta conformado por un conjunto de estados y transiciones entre estos con ciertos valores, o sea un grafo dirigido ponderado. Se plantean los estados $\{trabajando = W, descansando = B, interrumpido = I\}$, con funci\'on de transici\'on $\delta(q_i) = \{(q_0, p_0), (q_1, p_1), (q_2, p_2)\}$ donde $p_j$ representa la probabilidad de que estando en $q_i$ se vaya a $q_j$.
 
