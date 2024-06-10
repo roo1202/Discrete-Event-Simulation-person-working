@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1717975549.65255 "d:/escuela/3er/segundo semestre/simulacion/simulacion/Report/Report.tex" "Report.pdf" "Report" 1717975552.16321 0
-  "Report.aux" 1717975551 4181 0cadcf4bca6df5b4adc60aa5c29c03dd "pdflatex"
-  "Report.out" 1717975551 3298 e4590b4e85998550219502262f6840fe "pdflatex"
-  "Report.tex" 1717975548 22469 6b450820185cc6a3e1027c4b4cee954f ""
+["pdflatex"] 1717981666.4073 "d:/escuela/3er/segundo semestre/simulacion/simulacion/Report/Report.tex" "Report.pdf" "Report" 1717981667.92613 0
+  "Report.aux" 1717981667 4181 5b58aeb4487348b41ae0a2137db1f29e "pdflatex"
+  "Report.out" 1717981667 3298 e4590b4e85998550219502262f6840fe "pdflatex"
+  "Report.tex" 1717981665 22898 aa64fe5c270116272c939e9425da0f7e ""
   "Tiempo_de_trabajo_y_descansos.png" 1717951398 137179 cfbc0b71d26d55e5e17d4922ae69f790 ""
   "c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk" 1717890639 25396 e0f02e9ea5d74ea306aa5a6d8ae8ba0a ""
   "c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk" 1717859887 31928 b8b528d5fef067a9a42f265e54a5147b ""
@@ -191,7 +191,7 @@
   "c:/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1715331324 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1715262327 41983 7ec6bfd6bf34339a61f0f08f42298e60 ""
   "c:/texlive/2024/texmf.cnf" 1715331559 713 e69b156964470283e0530f5060668171 ""
-  "d:/escuela/3er/segundo semestre/simulacion/simulacion/Report/Report.tex" 1717975548 22469 6b450820185cc6a3e1027c4b4cee954f ""
+  "d:/escuela/3er/segundo semestre/simulacion/simulacion/Report/Report.tex" 1717981665 22898 aa64fe5c270116272c939e9425da0f7e ""
   "markov1.png" 1717975423 60107 72ef228de4f86b0eee37edee107b7c8a ""
   "markov2.png" 1717975439 58735 4aa775a24d244a4d1fb72cefb14304d6 ""
   "markov3.png" 1717975451 52597 e2b310f2aa9b9446419864ec0f514a25 ""

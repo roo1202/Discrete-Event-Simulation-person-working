@@ -148,9 +148,7 @@ Se llevaron a cabo simulaciones de $480$ minutos ($8$ horas) con distintas metod
 
 A partir de las simulaciones con el modelo de colas, se recopilan los datos para conformar el modelo de cadenas de Markov, con el cual se llevan a cabo comparaciones, para ello se utilizan funciones que arrojan la diferencia modular entre los valores que devuelven ambos modelos ($f(x) = |y_1 - y_2|$ siendo $x,y_1,y_2$ el tiempo de simulaci\'on, el valor que devuelve el modelo de colas, el modelo que devuelve el modelo de cadenas, respectivamente). 
 
-Los tests utlizados para validar las hip\'otesis, son: "KS statistic", "Chi-square statistic", "U statistic", "D statistic", "H statistic". 
-
-Para el criterio de parada se usa qu\'e tanto se aleja el estimador muestral del la poblaci\'on, y esto se comprueba cuando $\frac{\sigma}{\sqrt{k}} < c$ donde $c$ es el error que se est\'a dispuesto a cometer (la mitad de la longitud de confianza) con $95\%$ de confianza. 
+Para el criterio de parada se usa qu\'e tanto se aleja el estimador muestral del la poblaci\'on, y esto se comprueba cuando $\frac{\sigma}{\sqrt{k}} < c$ donde $c$ es el error que se est\'a dispuesto a cometer (la mitad de la longitud de confianza) con $95\%$ de confianza y $k$ el n\'umero de simulaciones. 
 
 \subsection{El efecto de las interrupciones}
 
@@ -180,7 +178,7 @@ Se comprueban dichas hipótesis:
     \item  Realizando prueba Chi-square con la cantidad de tareas completadas.
 \end{enumerate}
 
-En la prueba de Kolmogorov-Smirnov dado que \'el $p$-$value < \alpha = 0.05$ existe evidencia suficiente para rechazar la hipótesis nula, por tanto no es posible afirmar que el tiempo trabajado sin interrupciones sigue una distribución exponencial. Pero dado que el $p$-$value > \alpha = 0.05$ no existe evidencia suficiente para rechazar la hipótesis nula, por tanto es posible considerar que \'el tiempo de trabajo con interrupciones sigue una distribución exponencial seg\'un los datos arrojados por nuestra simulación. Más aun dado que el $p$-$value > \alpha = 0.05$ no existe evidencia suficiente para rechazar la hipótesis nula, por tanto es posible considerar que \'el tiempo de trabajo en general sigue una distribución exponencial seg\'un los datos arrojados por nuestra simulación.
+En la prueba de Kolmogorov-Smirnov dado que \'el $p$-$value < \alpha = 0.05$ existe evidencia suficiente para rechazar la hipótesis nula, por tanto no es posible afirmar que el tiempo trabajado sin interrupciones sigue una distribución exponencial. Pero dado que el $p$-$value > \alpha = 0.05$ en el test Kolmogorov-Smirnov realizado al tiempo de trabajo con interrupciones, no existe evidencia suficiente para rechazar la hipótesis nula, por tanto es posible considerar que \'el tiempo de trabajo con interrupciones sigue una distribución exponencial seg\'un los datos arrojados por nuestra simulación. Más a\'un al realizarle el test a la muestra entera arroj\'o  un $p$-$value > \alpha = 0.05$ no existe evidencia suficiente para rechazar la hipótesis nula, por tanto es posible considerar que \'el tiempo de trabajo en general sigue una distribución exponencial seg\'un los datos arrojados por nuestra simulación.
 
 En la prueba de Chi-Square dado que el $p$-$value > \alpha = 0.05$ no existe evidencia suficiente para rechazar la hipótesis nula, por tanto es posible considerar que la cantidad de tareas en general sigue una distribución Poisson seg\'un los datos arrojados por nuestra simulación.
 
@@ -211,6 +209,7 @@ En ~\ref{fig3a} se puede observar que ningún grupo sobresale más que otro en l
 Al hacer un analísis similar, se observa ligeramente un mejor desempeño en el tiempo de trabajo en estrategias con descansos más prolongados y más espaciados (ver figura ~\ref{fig3b} gráfica inferior derecha), pero no se asegura que sea significativo.
 
 
+En la prueba de Kruskal-Wallis dado que el $p$-$value > \alpha = 0.05$ no existe evidencia suficiente para rechazar la hipótesis nula, por tanto se sustenta el análisis visual previamente realizado: La simulación arroja que NO existen diferencias significativas entre seguir alguna metodología (del tipo de las analizadas) o gestionar el tiempo aleatoriamente, respecto a la cantidad de tareas completadas**
 
 \section{Modelo Matem\'atico}
 
