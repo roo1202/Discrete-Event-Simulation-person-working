@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.10)  9 JUN 2024 21:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.10)  9 JUN 2024 22:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -780,7 +780,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,8n,93p,1033b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/public/cm/cmmi5.600pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmex10.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy7.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi7.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr7.pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy10.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk> <c:/texlive/2024/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi10.pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> <c:/Users/Admin/.texlive2024/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
-Output written on Report.pdf (6 pages, 507511 bytes).
+Output written on Report.pdf (6 pages, 507516 bytes).
 PDF statistics:
  705 PDF objects out of 1000 (max. 8388607)
  241 compressed objects within 3 object streams
